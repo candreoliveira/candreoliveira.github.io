@@ -1,0 +1,20 @@
+{
+  "name": "candreoliveira.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/candreoliveira/candreoliveira.github.io",
+  "authors": [
+    "Carlos Oliveira <candreoliveira@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ngMask": "*",
+    "angular": "~1.2.21"
+  }
+}
