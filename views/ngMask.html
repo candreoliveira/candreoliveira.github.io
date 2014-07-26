@@ -34,6 +34,12 @@
 
         <p>Model: {{date1}}</p>
         <p>Field Error: {{form.date1.$error}}</p>
+        <code>
+          &lt;input type="text" name="date1"
+               mask="39/19/9999"
+               clean="true"
+               ng-model="date1"&gt;
+        </code>
       </fieldset>
     </div>
     <div class="col-xs-4">
@@ -47,6 +53,12 @@
 
         <p>Model: {{date2}}</p>
         <p>Field Error: {{form.date2.$error}}</p>
+        <code>
+          &lt;input type="text" name="date2"
+               mask="39/19/9999"
+               clean="false"
+               ng-model="date2"&gt;
+        </code>
       </fieldset>
     </div>
   </div>
@@ -64,6 +76,11 @@
 
         <p>Model: {{cpf1}}</p>
         <p>Field Error: {{form.cpf1.$error}}</p>
+        <code>
+          &lt;input type="text" name="cpf1"
+               mask="999.999.999-99"
+               ng-model="cpf1"&gt;
+        </code>
       </fieldset>
     </div>
     <div class="col-xs-4">
@@ -77,6 +94,12 @@
 
         <p>Model: {{cpf3}}</p>
         <p>Field Error: {{form.cpf3.$error}}</p>
+        <code>
+          &lt;input type="text" name="cpf3"
+               mask="999.999.999-99"
+               clean="true"
+               ng-model="cpf3"&gt;
+        </code>
       </fieldset>
     </div>
     <div class="col-xs-4">
@@ -90,6 +113,12 @@
 
         <p>Model: {{cpf2}}</p>
         <p>Field Error: {{form.cpf2.$error}}</p>
+        <code>
+          &lt;input type="text" name="cpf2"
+               mask="999.999.999-99"
+               clean="false"
+               ng-model="cpf2"&gt;
+        </code>
       </fieldset>
     </div>
   </div>
@@ -108,6 +137,12 @@
 
         <p>Model: {{repeat}}</p>
         <p>Field Error: {{form.repeat.$error}}</p>
+        <code>
+          &lt;input type="text" name="repeat"
+               mask="9"
+               repeat="5"
+               ng-model="repeat"&gt;
+        </code>
       </fieldset>
     </div>
     <div class="col-xs-4">
@@ -120,6 +155,11 @@
 
         <p>Model: {{dontrepeat}}</p>
         <p>Field Error: {{form.dontrepeat.$error}}</p>
+        <code>
+          &lt;input type="text" name="dontrepeat"
+               mask="99999"
+               ng-model="dontrepeat"&gt;
+        </code>
       </fieldset>
     </div>
   </div>
