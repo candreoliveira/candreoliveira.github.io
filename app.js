@@ -6,7 +6,7 @@ angular.module('app', ['ngMask', 'ngRoute'])
         templateUrl: 'views/ngMask.html'
       })
       .when('/ngMask', {
-        template: ''
+        templateUrl: 'views/ngMask.html'
       })
       .otherwise({
         redirectTo: '/'
