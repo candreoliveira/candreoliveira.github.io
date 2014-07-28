@@ -14,7 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-ngMask": "*",
+    "angular-mask": "*",
     "angular": "~1.2.21",
     "angular-route": "~1.2.21"
   }
