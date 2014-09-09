@@ -1,6 +1,6 @@
 {
   "name": "ngMask",
-  "version": "0.3.11",
+  "version": "0.3.14",
   "homepage": "https://github.com/candreoliveira/ngMask",
   "authors": [
     "Carlos Oliveira <candreoliveira@gmail.com>"
@@ -28,6 +28,7 @@
   ],
   "devDependencies": {
     "angular": "~1.2.21",
-    "angular-mocks": "~1.2.21"
+    "angular-mocks": "~1.2.21",
+    "angular-route": "~1.2.21"
   }
 }
