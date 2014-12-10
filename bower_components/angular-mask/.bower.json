@@ -1,6 +1,6 @@
 {
   "name": "ngMask",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "homepage": "https://github.com/candreoliveira/ngMask",
   "authors": [
     "Carlos Oliveira <candreoliveira@gmail.com>"
@@ -31,11 +31,11 @@
     "angular-mocks": "~1.2.21",
     "angular-route": "~1.2.21"
   },
-  "_release": "3.0.2",
+  "_release": "3.0.3",
   "_resolution": {
     "type": "version",
-    "tag": "3.0.2",
-    "commit": "a0d11179d9923e4555ce197f28ad0130b9110ae4"
+    "tag": "3.0.3",
+    "commit": "29be41d0f3428a641736342f66361da497666744"
   },
   "_source": "git://github.com/candreoliveira/ngMask.git",
   "_target": "*",
