@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   angular.module('ngMask')
-    .factory('MaskService', ['$log', function($log){
+    .factory('MaskService', ['$log', '$q', function($log, $q){
       function create() {
         var options;
         var maskWithoutOptionals;
@@ -186,6 +186,8 @@
         }
 
         function generateRegex(opts) {
+          var deferred = $q.defer();
+
           function generateOptionalDivisors() {
             function sortNumber(a,b) {
                 return a - b;
@@ -243,10 +245,22 @@
 
             generateOptionalDivisors();
             maskWithoutOptionalsAndDivisorsLength = removeDivisors(maskWithoutOptionals).length;
+
+            deferred.resolve({
+              options: options,
+              divisors: divisors,
+              divisorElements: divisorElements,
+              optionalIndexes: optionalIndexes,
+              optionalDivisors: optionalDivisors,
+              optionalDivisorsCombinations: optionalDivisorsCombinations
+            });
           } catch (e) {
             $log.error('[MaskService - generateRegex]');
+            deferred.reject(e);
             throw e;
           }
+
+          return deferred.promise;
         }
 
         function getRegex(index) {
@@ -334,19 +348,38 @@
 
 
         function tryDivisorConfiguration(value) {
-          function insertDivisors(array, divisors) {
-            var output = array;
+          function insertDivisors(array, combination) {
+            function insert(array, output) {
+              var out = output;
+              for (var i=0; i<array.length; i++) {
+                var divisor = array[i];
+                if (divisor < out.length) {
+                  out.splice(divisor, 0, divisorElements[divisor]);
+                }
+              }
+              return out;
+            }
 
-            if (!angular.isArray(array) || !angular.isArray(divisors)) {
+            var output = array;
+            var divs = divisors.filter(function(it) {
+              var optionalDivisorsKeys = Object.keys(optionalDivisors).map(function(it){
+                return parseInt(it);
+              });
+
+              var notInCombination = combination.indexOf(it) === -1;
+              var notInOptionalDivisorParent = optionalDivisorsKeys.indexOf(it) === -1;
+              return notInCombination && notInOptionalDivisorParent;
+            });
+
+            if (!angular.isArray(array) || !angular.isArray(combination)) {
               return output;
             }
 
-            for (var i=0; i<divisors.length; i++) {
-              var divisor = divisors[i];
-              if (divisor < output.length) {
-                output.splice(divisor, 0, divisorElements[divisor]);
-              }
-            }
+            // insert not optional divisors
+            output = insert(divs, output);
+
+            // insert optional divisors
+            output = insert(combination, output);
 
             return output;
           }
