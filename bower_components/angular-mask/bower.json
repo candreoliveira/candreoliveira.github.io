@@ -1,11 +1,11 @@
 {
   "name": "ngMask",
-  "version": "3.0.3",
+  "version": "3.0.12",
   "homepage": "https://github.com/candreoliveira/ngMask",
   "authors": [
     "Carlos Oliveira <candreoliveira@gmail.com>"
   ],
-  "main": "dist/ngMask.min.js",
+  "main": "dist/ngMask.js",
   "description": "Best ngMask for AngularJS!",
   "moduleType": [
     "globals",

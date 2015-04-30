@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "angular-mask": "*",
-    "angular": "~1.2.21",
-    "angular-route": "~1.2.21"
+    "angular": "~1.3.2",
+    "angular-route": "~1.3.2"
   }
 }
